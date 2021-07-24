@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+	PUBLIC "-//mybatis.org//DTD Config 3.0//En"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<typeAliases>
+		<!--패키지는 .으로 구분  -->
+		<typeAlias type="test11.dto.TestDTO" alias="dto" />
+	</typeAliases>
+	<mappers>
+		<!--폴더는 /으로 구분  -->
+		<mapper resource="test11/resource/mapper.xml"/>
+	</mappers>
+</configuration>

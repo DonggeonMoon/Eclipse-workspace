@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	<mapper namespace=" ">
+		<select id="selectAll" resultType="dto">
+			select * 
+			from test_board
+			order by boardno desc
+		</select>
+		
+		<select id="selectOne" parameterType="int" resultType="dto">
+			select * 
+			from test_board
+			where boardno=#{boardno}
+			order by boardno desc
+		</select>
+		
+		<insert id="insertOne" parameterType="dto">
+			insert into test_board(boardno, boardtitle, boardwrite, boardcontent, boarddate)
+			values(test_seq.nextval, #{boardtitle}, #{boardwrite}, #{boardcontent}, sysdate)
+		</insert>
+		
+		<update id="updateOne" parameterType="dto">
+			update test_board
+			set boardtitle=#{boardtitle}, boardcontent=#{boardcontent}
+			where boardno=#{boardno}
+		</update>
+		
+		<delete id="deleteOne" parameterType="int">
+			delete from test_board
+			where boardno=#{boardno}
+		</delete>
+		 		
+	</mapper>
